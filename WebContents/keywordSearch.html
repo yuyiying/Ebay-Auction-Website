@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <head>
+        <title>Query Search!</title>
+        <link rel="stylesheet" type="text/css" href="eBay.css">
+    </head>
+    <body>
+        <h1>Query Search!</h1>
+
+        <a href="/eBay">Home</a>
+        <br>
+        
+        <form action="/eBay/search" method="GET">
+            <div class="queryContainer">
+                <div>
+                    <span>Enter search text:</span><br/>
+                    <input id="queryBox" name="q" type="text">
+                    <input id="submit" type="submit">
+                </div>
+                <!-- <pre id="suggestion"></pre> -->
+                <!-- <div class="suggestions">
+                    <div class="current">Maine</div>
+                    <div>Maryland</div>
+                    <div>Massachusetts</div>
+                    <div>Michigan</div>
+                    <div>Minnesota</div>
+                    <div>Mississippi</div>
+                    <div>Missouri</div>
+                    <div>Montana</div>
+                </div> -->
+                <div id="suggestion" class="suggestions"></div>
+            </div>
+            <!-- TODO: set these hidden fields with Javascript or something -->
+            <input name="numResultsToSkip" type="hidden" value="0">
+            <input name="numResultsToReturn" type="hidden" value="10">
+            
+        </form>
+<!--         // <script src="autosuggest.js"></script>
+        // <script src="suggestions.js"></script> -->
+        <script type="text/javascript" src="autosuggest2.js"></script>
+        <script type="text/javascript" src="suggestions2.js"></script>
+        <link rel="stylesheet" type="text/css" href="autosuggest.css" /> 
+        <script type="text/javascript">
+            window.onload = function () {
+                var oTextbox = new AutoSuggestControl(document.getElementById("queryBox"), new StateSuggestions());        
+            }
+        </script>
+    </body>
+</html>
